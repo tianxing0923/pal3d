@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="author" content="erictian">
+  <meta name="description" content="7月21日《仙剑奇侠传3D回合》不删档测试">
+  <title>相逢终有期 仙剑情不老</title>
+  <!-- build:css css/style.css -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="js/fullpage/zepto.fullpage.css">
+  <!-- endbuild -->
+</head>
+
+<body>
+  <div id="loading" class="loading bg active">
+    <div class="sword bg"></div>
+    <div id="load_text" class="shadow bg">0%</div>
+  </div>
+  <div id="wrapper" class="wrapper"></div>
+  <audio id="audio" class="hide" src="" loop></audio>
+  <script id="tpl" type="text/html">
+    <div id="fullpage">
+      <section class="page">
+        <div class="frame1 bg"></div>
+        <div class="text">
+          <div class="text1 text1-3 bg"></div>
+          <div class="text1 text1-2 bg"></div>
+          <div class="text1 text1-1 bg"></div>
+        </div>
+      </section>
+      <section class="page">
+        <div class="frame2 bg"></div>
+        <div class="text">
+          <div class="text2 text2-4 bg"></div>
+          <div class="text2 text2-3 bg"></div>
+          <div class="text2 text2-2 bg"></div>
+          <div class="text2 text2-1 bg"></div>
+        </div>
+      </section>
+      <section class="page">
+        <div class="frame3 bg"></div>
+        <div class="text">
+          <div class="text3 text3-2 bg"></div>
+          <div class="text3 text3-1 bg"></div>
+        </div>
+      </section>
+      <section class="page">
+        <div class="frame4 bg"></div>
+        <div class="text">
+          <div class="text4 text4-3 bg"></div>
+          <div class="text4 text4-2 bg"></div>
+          <div class="text4 text4-1 bg"></div>
+        </div>
+      </section>
+      <section class="page">
+        <div class="frame5 bg"></div>
+        <div class="text">
+          <div class="text5 text5-5 bg"></div>
+          <div class="text5 text5-4 bg"></div>
+          <div class="text5 text5-3 bg"></div>
+          <div class="text5 text5-2 bg"></div>
+          <div class="text5 text5-1 bg"></div>
+        </div>
+      </section>
+      <section class="page">
+        <div class="frame6 bg"></div>
+        <div class="text">
+          <div class="text6 text6-2 bg"></div>
+          <div class="text6 text6-1 bg"></div>
+        </div>
+      </section>
+      <section class="page">
+        <div class="frame7 bg"></div>
+        <div class="text">
+          <div class="text7 text7-2 bg"></div>
+          <div class="text7 text7-1 bg"></div>
+        </div>
+      </section>
+      <section class="page">
+        <div class="frame8 bg"></div>
+        <div class="text">
+          <div class="text8 text8-4 bg"></div>
+          <div class="text8 text8-3 bg"></div>
+          <div class="text8 text8-2 bg"></div>
+          <div class="text8 text8-1 bg"></div>
+        </div>
+      </section>
+      <section class="page">
+        <div class="frame9 bg"></div>
+        <div class="text">
+          <div class="text9 text9-5 bg"></div>
+          <div class="text9 text9-4 bg"></div>
+          <div class="text9 text9-3 bg"></div>
+          <div class="text9 text9-2 bg"></div>
+          <div class="text9 text9-1 bg"></div>
+        </div>
+      </section>
+      <section class="page">
+        <div class="frame10 bg"></div>
+        <div class="text">
+          <div class="text10 text10-5 bg"></div>
+          <div class="text10 text10-4 bg"></div>
+          <div class="text10 text10-3 bg"></div>
+          <div class="text10 text10-2 bg"></div>
+          <div class="text10 text10-1 bg"></div>
+        </div>
+      </section>
+      <section class="page">
+        <div class="frame11 bg"></div>
+      </section>
+      <section class="page page-end">
+        <div class="frame-end"></div>
+        <div class="slogan bg"></div>
+        <a class="btn-download bg" href="https://xjqxz.gaeamobile.net/special/landpage"></a>
+      </section>
+    </div>
+    <div id="arrow_wrap" class="arrow-wrap">
+      <i class="arrow bg"></i>
+    </div>
+    <div id="music" class="music playing"></div>
+  </script>
+  <!-- build:zeptojs js/zepto.js -->
+  <script src="js/zepto/zepto.js"></script>
+  <script src="js/zepto/ajax.js"></script>
+  <script src="js/zepto/event.js"></script>
+  <!-- endbuild -->
+  <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <!-- build:js js/index.js -->
+  <script src="js/fullpage/zepto.fullpage.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/index.js"></script>
+  <!-- endbuild -->
+  <script>
+    // 分享参数
+    var SHARE_OBJ = {
+      title: '《仙剑奇侠传》新故事loading 99%',
+      desc: '相逢终有期，仙剑情不老。我们不见不散！',
+      link: location.href,
+      imgUrl: 'http://www.phboy.com/pal3d/images/thumbnail.jpg',
+      success: function() {}
+    };
+
+    $.ajax({
+      url: 'http://h5.skyfish.me/weixin/wxjs.php',
+      data: {
+        'url': location.href,
+        'type': 'jsonp'
+      },
+      dataType: 'jsonp',
+      success: function(data) {
+        wx.config({
+          appId: data.appId,
+          timestamp: data.timestamp,
+          nonceStr: data.nonceStr,
+          signature: data.signature,
+          jsApiList: [
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'onMenuShareQQ',
+            'onMenuShareWeibo',
+            'onMenuShareQZone'
+          ]
+        });
+        wx.ready(function() {
+          // 分享到朋友圈
+          wx.onMenuShareTimeline(SHARE_OBJ);
+          // 分享给朋友
+          wx.onMenuShareAppMessage(SHARE_OBJ);
+          // 分享到QQ
+          wx.onMenuShareQQ(SHARE_OBJ);
+          // 分享到腾讯微博
+          wx.onMenuShareWeibo(SHARE_OBJ);
+          // 分享到QQ空间
+          wx.onMenuShareQZone(SHARE_OBJ);
+        });
+      }
+    });
+  </script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement('script');
+      hm.src = '//hm.baidu.com/hm.js?ddec433b11607be3a27563e3b4d41877';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</body>
+
+</html>

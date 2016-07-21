@@ -1,0 +1,537 @@
+@keyframes ani-shake {
+  0% {
+    transform: translate3d(0, 30px, 0);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 30px, 0);
+  }
+}
+// 文字动画
+@keyframes ani-text {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+// 箭头动画
+@keyframes ani-arrow {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 20px, 0);
+  }
+}
+
+@keyframes ani-boot1 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1500% 0;
+  }
+}
+@keyframes ani-boot2 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1600% 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+  text-align: center;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+.bg {
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: 100% auto;
+}
+
+.loading {
+  // display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/bg.jpg) no-repeat 0 100%;
+  background-size: 100% auto;
+  opacity: 0;
+  transition-duration: .3s;
+  z-index: 99999999;
+  &.active {
+    opacity: 1;
+  }
+  .sword {
+    margin: 35% auto 0;
+    width: 90.5px;
+    height: 246.5px;
+    background-image: url(../images/sword.png);
+    animation: ani-shake 1.2s linear infinite;
+  }
+  .shadow {
+    margin: 8% auto 0;
+    width: 67.5px;
+    height: 64.5px;
+    line-height: 64.5px;
+    background-image: url(../images/shadow.png);
+    color: #fff;
+    font-size: 1.6rem;
+  }
+  .load-text {
+    position: absolute;
+    top: 26%;
+    left: 0;
+    width: 100%;
+    font-size: 5rem;
+    color: #fff;
+  }
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url(../images/bg.jpg) no-repeat 0 100%;
+  background-size: 100% auto;
+  transition-duration: .3s;
+  &.active {
+    opacity: 1;
+  }
+}
+.page {
+  position: relative;
+  &.page-end {
+    background-color: #fff;
+  }
+  .frame1 {
+    margin-top: 15%;
+    height: 270px;
+    background-image: url(../images/frame1.png);
+    @media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone6plus */
+      height: 310px;
+    }
+  }
+  .frame2 {
+    margin-top: 15%;
+    height: 270px;
+    background-image: url(../images/frame2.png);
+    @media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone6plus */
+      height: 310px;
+    }
+  }
+  .frame3 {
+    margin-top: 15%;
+    height: 280px;
+    background-image: url(../images/frame3.png);
+    @media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone6plus */
+      height: 320px;
+    }
+  }
+  .frame4 {
+    margin-top: 15%;
+    height: 270px;
+    background-image: url(../images/frame4.png);
+    @media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone6plus */
+      height: 310px;
+    }
+  }
+  .frame5 {
+    margin-top: 15%;
+    height: 315px;
+    background-image: url(../images/frame5.png);
+    @media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone6plus */
+      height: 355px;
+    }
+  }
+  .frame6 {
+    margin-top: 15%;
+    height: 323px;
+    background-image: url(../images/frame6.png);
+    @media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone6plus */
+      height: 363px;
+    }
+  }
+  .frame7 {
+    margin-top: 15%;
+    height: 295px;
+    background-image: url(../images/frame7.png);
+    @media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone6plus */
+      height: 335px;
+    }
+  }
+  .frame8 {
+    margin-top: 15%;
+    height: 285px;
+    background-image: url(../images/frame8.png);
+    @media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone6plus */
+      height: 325px;
+    }
+  }
+  .frame9 {
+    margin-top: 15%;
+    height: 275px;
+    background-image: url(../images/frame9.png);
+    @media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone6plus */
+      height: 315px;
+    }
+  }
+  .frame10 {
+    margin-top: 15%;
+    height: 265px;
+    background-image: url(../images/frame10.png);
+    @media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone6plus */
+      height: 305px;
+    }
+  }
+  .frame11 {
+    margin-top: 35%;
+    height: 285px;
+    background-image: url(../images/frame11.png);
+    @media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone6plus */
+      height: 325px;
+    }
+  }
+  .frame-end {
+    height: 100%;
+  }
+  .text {
+    margin-top: 10%;
+    div {
+      display: inline-block;
+      margin-left: 6px;
+      opacity: 0;
+    }
+  }
+  .text1 {
+    height: 172px;
+  }
+  .text2 {
+    height: 159px;
+  }
+  .text3 {
+    height: 102px;
+  }
+  .text4 {
+    height: 102px;
+  }
+  .text5 {
+    height: 102px;
+  }
+  .text6 {
+    height: 102px;
+  }
+  .text7 {
+    height: 90px;
+  }
+  .text8 {
+    height: 90px;
+  }
+  .text9 {
+    height: 112px;
+  }
+  .text10 {
+    height: 148px;
+  }
+  .slogan {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    height: 309.5px;
+    background-image: url(../images/slogan.png);
+    background-size: auto 100%;
+    opacity: 0;
+    transition-duration: .5s;
+    @media (max-device-height: 568px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone5 */
+      background-size: 100%;
+      bottom: 0;
+    }
+  }
+  .btn-download {
+    position: absolute;
+    bottom: 54px;
+    left: 50%;
+    margin-left: -78px;
+    width: 156.5px;
+    height: 59px;
+    background-image: url(../images/btn_download.png);
+    opacity: 0;
+    transition-duration: .5s;
+    @media (max-device-height: 568px) and (-webkit-min-device-pixel-ratio: 2){/* 兼容iphone5 */
+      background-size: 100%;
+      margin-left: -70px;
+      width: 140px;
+      bottom: 58px;
+    }
+  }
+  &.cur {
+    .slogan,
+    .btn-download {
+      opacity: 1;
+      transition-delay: 2.5s;
+    }
+    .frame-end {
+      background-image: url(../images/sprites1.jpg);
+      background-size: 1500%;
+      animation: ani-boot1 1s steps(15) forwards;
+      &.loop {
+        background-image: url(../images/sprites2.jpg);
+        background-size: 1600%;
+        animation: ani-boot2 1.5s steps(16) infinite;
+      }
+    }
+    .text {
+      div {
+        animation: ani-text 1s ease forwards;
+      }
+      .text1-1 {
+        width: 16px;
+        background-image: url(../images/text1_1.png);
+        animation-delay: .3s;
+      }
+      .text1-2 {
+        width: 27.5px;
+        background-image: url(../images/text1_2.png);
+        animation-delay: .8s;
+      }
+      .text1-3 {
+        width: 29.5px;
+        background-image: url(../images/text1_3.png);
+        animation-delay: 1.3s;
+      }
+      .text2-1 {
+        width: 15.5px;
+        background-image: url(../images/text2_1.png);
+        background-position: 0 5px;
+        animation-delay: .3s;
+      }
+      .text2-2 {
+        width: 26.5px;
+        background-image: url(../images/text2_2.png);
+        animation-delay: .8s;
+      }
+      .text2-3 {
+        width: 28.5px;
+        background-image: url(../images/text2_3.png);
+        animation-delay: 1.3s;
+      }
+      .text2-4 {
+        width: 28.5px;
+        background-image: url(../images/text2_4.png);
+        animation-delay: 1.8s;
+      }
+      .text3-1 {
+        width: 15.5px;
+        background-image: url(../images/text3_1.png);
+        background-position: 0 4px;
+        animation-delay: .3s;
+      }
+      .text3-2 {
+        width: 29px;
+        background-image: url(../images/text3_2.png);
+        animation-delay: .8s;
+      }
+      .text4-1 {
+        width: 14.5px;
+        background-image: url(../images/text4_1.png);
+        background-position: 0 6px;
+        animation-delay: .3s;
+      }
+      .text4-2 {
+        width: 28.5px;
+        background-image: url(../images/text4_2.png);
+        animation-delay: .8s;
+      }
+      .text4-3 {
+        width: 28px;
+        background-image: url(../images/text4_3.png);
+        animation-delay: 1.3s;
+      }
+      .text5-1 {
+        width: 16px;
+        background-image: url(../images/text5_1.png);
+        background-position: 0 5px;
+        animation-delay: .3s;
+      }
+      .text5-2 {
+        width: 28px;
+        background-image: url(../images/text5_2.png);
+        animation-delay: .8s;
+      }
+      .text5-3 {
+        width: 28px;
+        background-image: url(../images/text5_3.png);
+        animation-delay: 1.3s;
+      }
+      .text5-4 {
+        width: 28px;
+        background-image: url(../images/text5_4.png);
+        animation-delay: 1.8s;
+      }
+      .text5-5 {
+        width: 28px;
+        background-image: url(../images/text5_5.png);
+        animation-delay: 2.3s;
+      }
+      .text6-1 {
+        width: 16px;
+        background-image: url(../images/text6_1.png);
+        background-position: 0 10px;
+        animation-delay: .3s;
+      }
+      .text6-2 {
+        width: 29px;
+        background-image: url(../images/text6_2.png);
+        animation-delay: .8s;
+      }
+      .text7-1 {
+        width: 15px;
+        background-image: url(../images/text7_1.png);
+        background-position: 0 5px;
+        animation-delay: .3s;
+      }
+      .text7-2 {
+        width: 26.5px;
+        background-image: url(../images/text7_2.png);
+        animation-delay: .8s;
+      }
+      .text8-1 {
+        width: 16px;
+        background-image: url(../images/text8_1.png);
+        background-position: 0 4px;
+        animation-delay: .3s;
+      }
+      .text8-2 {
+        width: 30px;
+        background-image: url(../images/text8_2.png);
+        animation-delay: .8s;
+      }
+      .text8-3 {
+        width: 29.5px;
+        background-image: url(../images/text8_3.png);
+        animation-delay: 1.3s;
+      }
+      .text8-4 {
+        width: 30px;
+        background-image: url(../images/text8_4.png);
+        animation-delay: 1.8s;
+      }
+      .text9-1 {
+        width: 14px;
+        background-image: url(../images/text9_1.png);
+        background-position: 0 8px;
+        animation-delay: .3s;
+      }
+      .text9-2 {
+        width: 29px;
+        background-image: url(../images/text9_2.png);
+        animation-delay: .8s;
+      }
+      .text9-3 {
+        width: 29px;
+        background-image: url(../images/text9_3.png);
+        animation-delay: 1.3s;
+      }
+      .text9-4 {
+        width: 28px;
+        background-image: url(../images/text9_4.png);
+        animation-delay: 1.8s;
+      }
+      .text9-5 {
+        width: 30px;
+        background-image: url(../images/text9_5.png);
+        animation-delay: 2.3s;
+      }
+      .text10-1 {
+        width: 16px;
+        background-image: url(../images/text10_1.png);
+        background-position: 0 5px;
+        animation-delay: .3s;
+      }
+      .text10-2 {
+        width: 29px;
+        background-image: url(../images/text10_2.png);
+        animation-delay: .8s;
+      }
+      .text10-3 {
+        width: 29px;
+        background-image: url(../images/text10_3.png);
+        animation-delay: 1.3s;
+      }
+      .text10-4 {
+        width: 29px;
+        background-image: url(../images/text10_4.png);
+        animation-delay: 1.8s;
+      }
+      .text10-5 {
+        width: 30px;
+        background-image: url(../images/text10_5.png);
+        animation-delay: 2.3s;
+      }
+    }
+  }
+}
+.music {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 99999;
+  width: 24px;
+  height: 18px;
+  background: url(../images/mute.png) no-repeat 0 0;
+  background-size: auto 100%;
+  &.playing {
+    background-image: url(../images/volume.png);
+  }
+}
+.arrow-wrap {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 41px;
+  height: 26px;
+  text-align: center;
+  transform: translate3d(-50%, 0, 0);
+  .arrow {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 41px;
+    height: 26px;
+    background-image: url(../images/arrow.png);
+    animation: ani-arrow 1s linear infinite;
+  }
+}

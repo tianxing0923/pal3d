@@ -1,0 +1,25 @@
+{
+  "name": "pal3d",
+  "version": "1.0.0",
+  "description": "Chinese paladin 3D MMO turn-based mobile game",
+  "author": {
+    "name": "Eric Tian",
+    "email": "tianxing0923@qq.com"
+  },
+  "homepage": "https://github.com/tianxing0923/pal3d",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tianxing0923/pal3d"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.0.5",
+    "gulp-csso": "^1.1.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-usemin": "^0.3.9",
+    "gulp-replace": "^0.5.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-autoprefixer": "^3.1.0"
+  }
+}

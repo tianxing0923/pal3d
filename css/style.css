@@ -1,0 +1,669 @@
+@-webkit-keyframes ani-shake {
+  0% {
+    -webkit-transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 30px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 30px, 0);
+  }
+}
+@keyframes ani-shake {
+  0% {
+    -webkit-transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 30px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 30px, 0);
+  }
+}
+@-webkit-keyframes ani-text {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes ani-text {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes ani-arrow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
+  }
+}
+@keyframes ani-arrow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
+  }
+}
+@-webkit-keyframes ani-boot1 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1500% 0;
+  }
+}
+@keyframes ani-boot1 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1500% 0;
+  }
+}
+@-webkit-keyframes ani-boot2 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1600% 0;
+  }
+}
+@keyframes ani-boot2 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1600% 0;
+  }
+}
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+  text-align: center;
+  overflow: hidden;
+}
+img {
+  max-width: 100%;
+}
+.hide {
+  display: none;
+}
+.bg {
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: 100% auto;
+}
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/bg.jpg) no-repeat 0 100%;
+  background-size: 100% auto;
+  opacity: 0;
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+  z-index: 99999999;
+}
+.loading.active {
+  opacity: 1;
+}
+.loading .sword {
+  margin: 35% auto 0;
+  width: 90.5px;
+  height: 246.5px;
+  background-image: url(../images/sword.png);
+  -webkit-animation: ani-shake 1.2s linear infinite;
+  animation: ani-shake 1.2s linear infinite;
+}
+.loading .shadow {
+  margin: 8% auto 0;
+  width: 67.5px;
+  height: 64.5px;
+  line-height: 64.5px;
+  background-image: url(../images/shadow.png);
+  color: #fff;
+  font-size: 1.6rem;
+}
+.loading .load-text {
+  position: absolute;
+  top: 26%;
+  left: 0;
+  width: 100%;
+  font-size: 5rem;
+  color: #fff;
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url(../images/bg.jpg) no-repeat 0 100%;
+  background-size: 100% auto;
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+}
+.wrapper.active {
+  opacity: 1;
+}
+.page {
+  position: relative;
+}
+.page.page-end {
+  background-color: #fff;
+}
+.page .frame1 {
+  margin-top: 15%;
+  height: 270px;
+  background-image: url(../images/frame1.png);
+}
+@media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .frame1 {
+    /* 兼容iphone6plus */
+    height: 310px;
+  }
+}
+.page .frame2 {
+  margin-top: 15%;
+  height: 270px;
+  background-image: url(../images/frame2.png);
+}
+@media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .frame2 {
+    /* 兼容iphone6plus */
+    height: 310px;
+  }
+}
+.page .frame3 {
+  margin-top: 15%;
+  height: 280px;
+  background-image: url(../images/frame3.png);
+}
+@media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .frame3 {
+    /* 兼容iphone6plus */
+    height: 320px;
+  }
+}
+.page .frame4 {
+  margin-top: 15%;
+  height: 270px;
+  background-image: url(../images/frame4.png);
+}
+@media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .frame4 {
+    /* 兼容iphone6plus */
+    height: 310px;
+  }
+}
+.page .frame5 {
+  margin-top: 15%;
+  height: 315px;
+  background-image: url(../images/frame5.png);
+}
+@media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .frame5 {
+    /* 兼容iphone6plus */
+    height: 355px;
+  }
+}
+.page .frame6 {
+  margin-top: 15%;
+  height: 323px;
+  background-image: url(../images/frame6.png);
+}
+@media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .frame6 {
+    /* 兼容iphone6plus */
+    height: 363px;
+  }
+}
+.page .frame7 {
+  margin-top: 15%;
+  height: 295px;
+  background-image: url(../images/frame7.png);
+}
+@media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .frame7 {
+    /* 兼容iphone6plus */
+    height: 335px;
+  }
+}
+.page .frame8 {
+  margin-top: 15%;
+  height: 285px;
+  background-image: url(../images/frame8.png);
+}
+@media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .frame8 {
+    /* 兼容iphone6plus */
+    height: 325px;
+  }
+}
+.page .frame9 {
+  margin-top: 15%;
+  height: 275px;
+  background-image: url(../images/frame9.png);
+}
+@media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .frame9 {
+    /* 兼容iphone6plus */
+    height: 315px;
+  }
+}
+.page .frame10 {
+  margin-top: 15%;
+  height: 265px;
+  background-image: url(../images/frame10.png);
+}
+@media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .frame10 {
+    /* 兼容iphone6plus */
+    height: 305px;
+  }
+}
+.page .frame11 {
+  margin-top: 35%;
+  height: 285px;
+  background-image: url(../images/frame11.png);
+}
+@media (min-device-height: 736px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .frame11 {
+    /* 兼容iphone6plus */
+    height: 325px;
+  }
+}
+.page .frame-end {
+  height: 100%;
+}
+.page .text {
+  margin-top: 10%;
+}
+.page .text div {
+  display: inline-block;
+  margin-left: 6px;
+  opacity: 0;
+}
+.page .text1 {
+  height: 172px;
+}
+.page .text2 {
+  height: 159px;
+}
+.page .text3 {
+  height: 102px;
+}
+.page .text4 {
+  height: 102px;
+}
+.page .text5 {
+  height: 102px;
+}
+.page .text6 {
+  height: 102px;
+}
+.page .text7 {
+  height: 90px;
+}
+.page .text8 {
+  height: 90px;
+}
+.page .text9 {
+  height: 112px;
+}
+.page .text10 {
+  height: 148px;
+}
+.page .slogan {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  height: 309.5px;
+  background-image: url(../images/slogan.png);
+  background-size: auto 100%;
+  opacity: 0;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+@media (max-device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .slogan {
+    /* 兼容iphone5 */
+    background-size: 100%;
+    bottom: 0;
+  }
+}
+.page .btn-download {
+  position: absolute;
+  bottom: 54px;
+  left: 50%;
+  margin-left: -78px;
+  width: 156.5px;
+  height: 59px;
+  background-image: url(../images/btn_download.png);
+  opacity: 0;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+@media (max-device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .page .btn-download {
+    /* 兼容iphone5 */
+    background-size: 100%;
+    margin-left: -70px;
+    width: 140px;
+    bottom: 58px;
+  }
+}
+.page.cur .slogan,
+.page.cur .btn-download {
+  opacity: 1;
+  -webkit-transition-delay: 2.5s;
+  transition-delay: 2.5s;
+}
+.page.cur .frame-end {
+  background-image: url(../images/sprites1.jpg);
+  background-size: 1500%;
+  -webkit-animation: ani-boot1 1s steps(15) forwards;
+  animation: ani-boot1 1s steps(15) forwards;
+}
+.page.cur .frame-end.loop {
+  background-image: url(../images/sprites2.jpg);
+  background-size: 1600%;
+  -webkit-animation: ani-boot2 1.5s steps(16) infinite;
+  animation: ani-boot2 1.5s steps(16) infinite;
+}
+.page.cur .text div {
+  -webkit-animation: ani-text 1s ease forwards;
+  animation: ani-text 1s ease forwards;
+}
+.page.cur .text .text1-1 {
+  width: 16px;
+  background-image: url(../images/text1_1.png);
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+.page.cur .text .text1-2 {
+  width: 27.5px;
+  background-image: url(../images/text1_2.png);
+  -webkit-animation-delay: .8s;
+  animation-delay: .8s;
+}
+.page.cur .text .text1-3 {
+  width: 29.5px;
+  background-image: url(../images/text1_3.png);
+  -webkit-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+}
+.page.cur .text .text2-1 {
+  width: 15.5px;
+  background-image: url(../images/text2_1.png);
+  background-position: 0 5px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+.page.cur .text .text2-2 {
+  width: 26.5px;
+  background-image: url(../images/text2_2.png);
+  -webkit-animation-delay: .8s;
+  animation-delay: .8s;
+}
+.page.cur .text .text2-3 {
+  width: 28.5px;
+  background-image: url(../images/text2_3.png);
+  -webkit-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+}
+.page.cur .text .text2-4 {
+  width: 28.5px;
+  background-image: url(../images/text2_4.png);
+  -webkit-animation-delay: 1.8s;
+  animation-delay: 1.8s;
+}
+.page.cur .text .text3-1 {
+  width: 15.5px;
+  background-image: url(../images/text3_1.png);
+  background-position: 0 4px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+.page.cur .text .text3-2 {
+  width: 29px;
+  background-image: url(../images/text3_2.png);
+  -webkit-animation-delay: .8s;
+  animation-delay: .8s;
+}
+.page.cur .text .text4-1 {
+  width: 14.5px;
+  background-image: url(../images/text4_1.png);
+  background-position: 0 6px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+.page.cur .text .text4-2 {
+  width: 28.5px;
+  background-image: url(../images/text4_2.png);
+  -webkit-animation-delay: .8s;
+  animation-delay: .8s;
+}
+.page.cur .text .text4-3 {
+  width: 28px;
+  background-image: url(../images/text4_3.png);
+  -webkit-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+}
+.page.cur .text .text5-1 {
+  width: 16px;
+  background-image: url(../images/text5_1.png);
+  background-position: 0 5px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+.page.cur .text .text5-2 {
+  width: 28px;
+  background-image: url(../images/text5_2.png);
+  -webkit-animation-delay: .8s;
+  animation-delay: .8s;
+}
+.page.cur .text .text5-3 {
+  width: 28px;
+  background-image: url(../images/text5_3.png);
+  -webkit-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+}
+.page.cur .text .text5-4 {
+  width: 28px;
+  background-image: url(../images/text5_4.png);
+  -webkit-animation-delay: 1.8s;
+  animation-delay: 1.8s;
+}
+.page.cur .text .text5-5 {
+  width: 28px;
+  background-image: url(../images/text5_5.png);
+  -webkit-animation-delay: 2.3s;
+  animation-delay: 2.3s;
+}
+.page.cur .text .text6-1 {
+  width: 16px;
+  background-image: url(../images/text6_1.png);
+  background-position: 0 10px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+.page.cur .text .text6-2 {
+  width: 29px;
+  background-image: url(../images/text6_2.png);
+  -webkit-animation-delay: .8s;
+  animation-delay: .8s;
+}
+.page.cur .text .text7-1 {
+  width: 15px;
+  background-image: url(../images/text7_1.png);
+  background-position: 0 5px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+.page.cur .text .text7-2 {
+  width: 26.5px;
+  background-image: url(../images/text7_2.png);
+  -webkit-animation-delay: .8s;
+  animation-delay: .8s;
+}
+.page.cur .text .text8-1 {
+  width: 16px;
+  background-image: url(../images/text8_1.png);
+  background-position: 0 4px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+.page.cur .text .text8-2 {
+  width: 30px;
+  background-image: url(../images/text8_2.png);
+  -webkit-animation-delay: .8s;
+  animation-delay: .8s;
+}
+.page.cur .text .text8-3 {
+  width: 29.5px;
+  background-image: url(../images/text8_3.png);
+  -webkit-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+}
+.page.cur .text .text8-4 {
+  width: 30px;
+  background-image: url(../images/text8_4.png);
+  -webkit-animation-delay: 1.8s;
+  animation-delay: 1.8s;
+}
+.page.cur .text .text9-1 {
+  width: 14px;
+  background-image: url(../images/text9_1.png);
+  background-position: 0 8px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+.page.cur .text .text9-2 {
+  width: 29px;
+  background-image: url(../images/text9_2.png);
+  -webkit-animation-delay: .8s;
+  animation-delay: .8s;
+}
+.page.cur .text .text9-3 {
+  width: 29px;
+  background-image: url(../images/text9_3.png);
+  -webkit-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+}
+.page.cur .text .text9-4 {
+  width: 28px;
+  background-image: url(../images/text9_4.png);
+  -webkit-animation-delay: 1.8s;
+  animation-delay: 1.8s;
+}
+.page.cur .text .text9-5 {
+  width: 30px;
+  background-image: url(../images/text9_5.png);
+  -webkit-animation-delay: 2.3s;
+  animation-delay: 2.3s;
+}
+.page.cur .text .text10-1 {
+  width: 16px;
+  background-image: url(../images/text10_1.png);
+  background-position: 0 5px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+.page.cur .text .text10-2 {
+  width: 29px;
+  background-image: url(../images/text10_2.png);
+  -webkit-animation-delay: .8s;
+  animation-delay: .8s;
+}
+.page.cur .text .text10-3 {
+  width: 29px;
+  background-image: url(../images/text10_3.png);
+  -webkit-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+}
+.page.cur .text .text10-4 {
+  width: 29px;
+  background-image: url(../images/text10_4.png);
+  -webkit-animation-delay: 1.8s;
+  animation-delay: 1.8s;
+}
+.page.cur .text .text10-5 {
+  width: 30px;
+  background-image: url(../images/text10_5.png);
+  -webkit-animation-delay: 2.3s;
+  animation-delay: 2.3s;
+}
+.music {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 99999;
+  width: 24px;
+  height: 18px;
+  background: url(../images/mute.png) no-repeat 0 0;
+  background-size: auto 100%;
+}
+.music.playing {
+  background-image: url(../images/volume.png);
+}
+.arrow-wrap {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 41px;
+  height: 26px;
+  text-align: center;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
+}
+.arrow-wrap .arrow {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 41px;
+  height: 26px;
+  background-image: url(../images/arrow.png);
+  -webkit-animation: ani-arrow 1s linear infinite;
+  animation: ani-arrow 1s linear infinite;
+}

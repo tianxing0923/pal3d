@@ -1,0 +1,25 @@
+.fullpage-wp {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.fullpage-wp:after {
+  display: block;
+  content: ' ';
+  height: 0;
+  clear: both;
+}
+
+.fullpage-wp.anim {
+  -webkit-transition: all 500ms ease-out 0s;
+  transition: all 500ms ease-out 0s;
+}
+
+.fullpage-page {
+  display: block;
+  overflow: hidden;
+}
+
+.fullpage-dir-h {
+  float: left;
+}
